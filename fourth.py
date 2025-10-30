@@ -1,4 +1,5 @@
-
+def existuje_pozice(radek, sloupec):
+    return 1 <= radek <= 8 and 1 <= sloupec <= 8
 
 
 def je_tah_mozny(figurka, cilova_pozice, obsazene_pozice):
@@ -6,9 +7,9 @@ def je_tah_mozny(figurka, cilova_pozice, obsazene_pozice):
     pozice = figurka["pozice"]
     cil_radek, cil_sloupec = cilova_pozice
 
-
-    if not cil_radek >= 1 and cil_radek <= 8 and cil_sloupec >= 1 and cil_sloupec <= 8:
+    if not existuje_pozice(cil_radek, cil_sloupec):
         return False
+    
 
     if pozice == cilova_pozice:
         return False
@@ -122,6 +123,8 @@ def je_tah_mozny_kral(pozice, cilova_pozice):
     cil_radek, cil_sloupec = cilova_pozice
     if abs(cil_radek - radek) <= 1 and abs(cil_sloupec - sloupec) <= 1:
         return True
+    else:
+        return False
 
 
 
