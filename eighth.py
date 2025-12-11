@@ -9,7 +9,7 @@ def bin_to_dec(binarni_cislo):
         vysledek += bit * (2 ** exponent)
         exponent += 1
 
-    return vysledek
+    return vysledek 
 
         
 def test_bin_to_dec():
